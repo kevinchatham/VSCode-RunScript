@@ -1,7 +1,7 @@
 {
-    "name": "powershell-right-click-run",
-    "displayName": "Powershell Right Click Run",
-    "description": "Adds a 'Run Script' option for ps1 in Explorer context menu",
+    "name": "vscode-context-run-script",
+    "displayName": "Run Script",
+    "description": "Adds a 'Run [Language Name] Script...' option for BAT or PS1 in the Explorer context menu.",
     "version": "0.0.1",
     "publisher": "kevinchatham",
     "engines": {
@@ -11,7 +11,8 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.runCommand"
+        "workspaceContains:**/*.ps1",
+        "workspaceContains:**/*.bat"
     ],
     "main": "./extension",
     "contributes": {
@@ -19,14 +20,22 @@
             "explorer/context": [
                 {
                     "when": "resourceLangId == powershell",
-                    "command": "extension.runCommand"
+                    "command": "extension.runPowershell"
+                },
+                {
+                    "when": "resourceLangId == bat",
+                    "command": "extension.runBatch"
                 }
             ]
         },
         "commands": [
             {
-                "command": "extension.runCommand",
-                "title": "Run Script..."
+                "command": "extension.runPowershell",
+                "title": "Run PowerShell Script..."
+            },
+            {
+                "command": "extension.runBatch",
+                "title": "Run Batch Script..."
             }
         ]
     },

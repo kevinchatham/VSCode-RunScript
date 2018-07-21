@@ -2,6 +2,10 @@
     "name": "vscode-context-run-script",
     "displayName": "Run Script",
     "description": "Adds a 'Run [Language Name] Script...' option for BAT or PS1 in the Explorer context menu.",
+    "repository": {
+        "url": "https://github.com/kevinmachdata/vscode-context-run-script",
+        "type": "git"
+    },
     "version": "0.0.1",
     "publisher": "kevinchatham",
     "engines": {

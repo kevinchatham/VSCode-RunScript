@@ -1,3 +1,3 @@
 npm install -g vsce
-vsce publish
+vsce package
 # cause i'm dumb

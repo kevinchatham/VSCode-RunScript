@@ -8,7 +8,7 @@ This extension adds a 'Run <> Script...' option for BAT or PS1 in the Explorer c
 
 2. Open the directory in VSCode
 
-3. In terminal run : ```Powershell.exe -File .\scripts\package-and-install-local.ps1```
+3. In terminal run : ```Powershell.exe -ExecutionPolicy Bypass -File .\scripts\package-and-install-local.ps1```
 
 4. If everything was a success, reload VSCode
 

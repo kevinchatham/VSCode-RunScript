@@ -3,11 +3,11 @@
 
 # .bat files work the same way. Support for bash might be added soon
 
-cls # recommended for clean terminal output, totally optional though
+Clear-Host # recommended for clean terminal output, totally optional though
 
 # do anything you want here...
 "Woo running a powershell file"
 
 # also recommended for clean terminal output
 Pause
-cls
+Clear-Host

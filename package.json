@@ -1,0 +1,44 @@
+{
+    "name": "powershell-right-click-run",
+    "displayName": "Powershell Right Click Run",
+    "description": "Adds a 'Run Script' option for ps1 in Explorer context menu",
+    "version": "0.0.1",
+    "publisher": "kevinchatham",
+    "engines": {
+        "vscode": "^1.25.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.runCommand"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "menus": {
+            "explorer/context": [
+                {
+                    "when": "resourceLangId == powershell",
+                    "command": "extension.runCommand"
+                }
+            ]
+        },
+        "commands": [
+            {
+                "command": "extension.runCommand",
+                "title": "Run Script..."
+            }
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "eslint": "^4.11.0",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    }
+}

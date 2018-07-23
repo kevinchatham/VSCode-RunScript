@@ -19,6 +19,8 @@ function activate(context) {
         terminal.show();
 
         terminal.sendText(command);
+
+        terminal.dispose();
     });
 
     let disposableBs = vscode.commands.registerCommand('extension.runBatch', async (fileUri) => {

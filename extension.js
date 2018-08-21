@@ -2,37 +2,39 @@
 const vscode = require('vscode');
 
 function activate(context) {
-    // console.log('Congratulations, your extension "powershell-right-click-run" is now active!');
-
     let disposablePs = vscode.commands.registerCommand('extension.runPowershell', async (fileUri) => {
-        //console.log(fileUri)
+        // Just some debug stuff
+        // console.log(fileUri)
 
-        // LOG LANGUAGES
+        // Log Available Languages
         // vscode.languages.getLanguages().then(l => console.log('languages', l));
-
-        let terminal = vscode.window.createTerminal();
 
         let userInput = fileUri.fsPath;
 
         let command = 'Powershell.exe -ExecutionPolicy Bypass -File ' + userInput;
 
+        let terminal = vscode.window.createTerminal();
+
         terminal.show();
 
         terminal.sendText(command);
 
-        terminal.sendText('exit'); // quick and dirty
+        // quick and dirty cause there doesn't seem to be another way
+        terminal.sendText('exit');
     });
 
     let disposableBs = vscode.commands.registerCommand('extension.runBatch', async (fileUri) => {
-        let terminal = vscode.window.createTerminal();
+        let userInput = fileUri.fsPath;
 
-        // Another way
-        // 'Powershell.exe -ExecutionPolicy Bypass -Command {Start-Process ' + userInput + '}';
-        let command = fileUri.fsPath;
+        let command = 'Powershell.exe -ExecutionPolicy Bypass -File ' + userInput;
+
+        let terminal = vscode.window.createTerminal();
 
         terminal.show();
 
         terminal.sendText(command);
+
+        terminal.sendText('exit');
     });
 
     context.subscriptions.push(disposablePs);

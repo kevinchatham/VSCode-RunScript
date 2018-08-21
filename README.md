@@ -4,12 +4,12 @@ This extension adds a 'Run <> Script...' option for BAT or PS1 in the Explorer c
 
 ## Installation
 
-1. In Git Bash run : ```git clone https://github.com/kevinmachdata/vscode-context-run-script```
+1. `git clone https://github.com/kevinmachdata/vscode-context-run-script`
 
 2. Open the directory in VSCode
 
-3. In terminal run : ```Powershell.exe -ExecutionPolicy Bypass -File .\scripts\package-and-install-local.ps1```
+3. In terminal run : `Powershell.exe -ExecutionPolicy Bypass -File .\scripts\package-and-install-local.ps1`
 
 4. If everything was a success, reload VSCode
 
-5. (optional) Right click on ```.\scripts\example.ps1``` and run your first powershell script 
+5. (optional) Right click on `.\scripts\example.ps1` and run your first powershell script 
